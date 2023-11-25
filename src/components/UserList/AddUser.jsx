@@ -2,8 +2,17 @@ import React, { useEffect, useState } from "react";
 import { Formik, Form } from 'formik';
 import { Modal, Button } from "react-bootstrap";
 
+import {
+    useAddUserMutation,
+    useUpdateUserMutation,
+} from "../../store/services/Users";
+
 const AddUser = (props) => {
     const [formSubmited, setFormSubmited] = useState(false)
+
+    const [addUser, { isLoading }] = useAddUserMutation();
+    // const [updateTask, { isLoading: isUpdating }] = useUpdateUserMutation();
+
     useEffect(() => {
         return () => {
             setFormSubmited(false)
@@ -31,6 +40,7 @@ const AddUser = (props) => {
                     }}
                     onSubmit={(values) => {
                         console.log(values)
+                        addUser(values);
                         setFormSubmited(true)
                     }}
                 >
