@@ -23,11 +23,14 @@ const AddUser = (props) => {
                     <div className="form-group mb-3">
                         <label htmlFor="exampleInputEmail1">Designation</label>
                         <select className="form-control" id="exampleFormControlSelect1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <option>Chief operations officer</option>
+                            <option>Chief executive officer</option>
+                            <option>Director</option>
+                            <option>Chief compliance officer</option>
+                            <option>President</option>
+                            <option>Chief financial officer</option>
+                            <option>Chief technology officer</option>
+                            <option>Vice-president</option>
                         </select>
                     </div>
                     <div className="form-group mb-3">
