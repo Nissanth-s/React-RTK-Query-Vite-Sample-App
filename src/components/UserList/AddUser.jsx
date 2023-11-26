@@ -11,13 +11,12 @@ const AddUser = (props) => {
     const [formSubmited, setFormSubmited] = useState(false)
 
     const [addUser, { isLoading }] = useAddUserMutation();
-    // const [updateTask, { isLoading: isUpdating }] = useUpdateUserMutation();
 
     useEffect(() => {
-        return () => {
+        if (props.show) {
             setFormSubmited(false)
         }
-    }, [props])
+    }, [props.show])
     return (
         <Modal
             {...props}
@@ -39,7 +38,6 @@ const AddUser = (props) => {
                         status: ""
                     }}
                     onSubmit={(values) => {
-                        console.log(values)
                         addUser(values);
                         setFormSubmited(true)
                     }}

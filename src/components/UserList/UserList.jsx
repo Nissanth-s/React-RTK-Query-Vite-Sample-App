@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useGetUsersQuery, useDeleteUserMutation } from "../../store/services/Users";
 import AddUser from './AddUser'
+import './userlist.css'
+
 const UserList = () => {
 
     const [modalShow, setModalShow] = React.useState(false);
 
     const { data, error, isLoading } = useGetUsersQuery();
-    const [deleteUser, { isDeleteLoading }] = useDeleteUserMutation();
+    const [deleteUser, { isLoading: deleating }] = useDeleteUserMutation();
 
     const onDelete = (id) => {
         deleteUser(id);
@@ -17,7 +19,7 @@ const UserList = () => {
             <div className="row">
                 <div className="col text-right">
                     <button type="button" className="btn btn-primary mb-3" onClick={() => setModalShow(true)}>Add User</button>
-                    {isDeleteLoading && "deleting..."}
+                    {deleating && <div className="status-strip mb-3">Deleating User...</div>}
                     {isLoading ? (<div>
                         <p>Loading...</p>
                     </div>) : (
@@ -42,8 +44,13 @@ const UserList = () => {
                                                 <td>{user.firstName}</td>
                                                 <td>{user.designation}</td>
                                                 <td>{user.status}</td>
-                                                <td className="delete-btn" onClick={() => onDelete(user.id)}>
-                                                    Delete
+                                                <td className="delete-btn">
+                                                    <button onClick={
+                                                        () => onDelete(user.id)}
+                                                        type="button"
+                                                        className="btn btn-sm btn-primary"
+                                                        disabled={deleating ? true : false}
+                                                    >Delete</button>
                                                 </td>
                                             </tr>
 
