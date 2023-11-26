@@ -28,23 +28,23 @@ const UserList = () => {
                                 <p>Something went wrong, please try after some time!</p>
                             </div>) : (
                                 <table className="table table-bordered">
-                                    <thead className="thead-dark">
+                                    <thead className="thead-dark table-head">
                                         <tr>
-                                            <th scope="col">#</th>
+                                            <th className="text-center" scope="col">#</th>
                                             <th scope="col">First Name</th>
                                             <th scope="col">Designation</th>
                                             <th scope="col">Current Status</th>
-                                            <th scope="col">Action</th>
+                                            <th className="text-center" scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {data.map((user, index) => (
                                             <tr key={user.id}>
-                                                <th scope="row">{index + 1}</th>
+                                                <td className="text-center" scope="row">{index + 1}</td>
                                                 <td>{user.firstName}</td>
                                                 <td>{user.designation}</td>
                                                 <td>{user.status}</td>
-                                                <td className="delete-btn">
+                                                <td className="delete-btn text-center">
                                                     <button onClick={
                                                         () => onDelete(user.id)}
                                                         type="button"
