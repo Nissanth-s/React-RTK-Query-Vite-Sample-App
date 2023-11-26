@@ -27,7 +27,7 @@ export const userApi = createApi({
       },
       invalidatesTags: [{ type: "Users", id: "LIST" }],
     }),
-    updateTask: build.mutation({
+    updateUser: build.mutation({
       query(data) {
         const { id, ...body } = data;
         return {
@@ -38,7 +38,7 @@ export const userApi = createApi({
       },
       invalidatesTags: [{ type: "Users", id: "LIST" }],
     }),
-    deleteTask: build.mutation({
+    deleteUser: build.mutation({
       query(id) {
         return {
           url: `users/${id}`,
