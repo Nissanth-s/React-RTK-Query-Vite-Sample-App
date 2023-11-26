@@ -1,6 +1,7 @@
-.delete-btn {
-    cursor: pointer;
-    text-align: center;
+.status-strip {
     width: 100%;
-    color: rgb(255, 0, 0);
+    background-color: rgb(241, 138, 11) !important;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
 }
