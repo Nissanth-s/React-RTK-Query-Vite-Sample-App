@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Formik, Form } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import { Modal, Button } from "react-bootstrap";
 
 import {
@@ -55,11 +55,17 @@ const AddUser = (props) => {
                             <>
                                 <div className="form-group mb-3">
                                     <label htmlFor="exampleInputEmail1">First Name</label>
-                                    <input type="text" className="form-control" name="firstName" id="firstName" placeholder="Enter Name" />
+                                    <Field
+                                        type="text"
+                                        name="firstName"
+                                        className="form-control"
+                                        placeholder="Enter Name"
+                                    />
                                 </div>
                                 <div className="form-group mb-3">
                                     <label htmlFor="exampleInputEmail1">Designation</label>
-                                    <select className="form-control" id="designation" name="designation">
+                                    <Field as="select" name="designation" className="form-control">
+                                        <option>Select Designation</option>
                                         <option>Chief operations officer</option>
                                         <option>Chief executive officer</option>
                                         <option>Director</option>
@@ -68,16 +74,17 @@ const AddUser = (props) => {
                                         <option>Chief financial officer</option>
                                         <option>Chief technology officer</option>
                                         <option>Vice-president</option>
-                                    </select>
+                                    </Field>
                                 </div>
                                 <div className="form-group mb-3">
                                     <label htmlFor="exampleInputEmail1">Current Status</label>
-                                    <select className="form-control" id="status" name="status">
+                                    <Field as="select" name="status" className="form-control">
+                                        <option>Select Status</option>
                                         <option>Active</option>
                                         <option>Inactive</option>
                                         <option>Inprogress</option>
                                         <option>Blocked</option>
-                                    </select>
+                                    </Field>
                                 </div>
                                 <button type="submit" className="btn btn-primary">Submit</button>
                             </>

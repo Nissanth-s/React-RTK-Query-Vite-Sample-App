@@ -42,7 +42,9 @@ const UserList = () => {
                                                 <td>{user.firstName}</td>
                                                 <td>{user.designation}</td>
                                                 <td>{user.status}</td>
-                                                <td className="delete-btn" onClick={() => onDelete(user.id)}>Delete</td>
+                                                <td className="delete-btn" onClick={() => onDelete(user.id)}>
+                                                    Delete
+                                                </td>
                                             </tr>
 
                                         ))}
