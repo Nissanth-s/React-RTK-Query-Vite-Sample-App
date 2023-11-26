@@ -9,7 +9,6 @@ import {
     createRoutesFromElements(
       <>
         <Route path="/" element={<UserList />}></Route>
-        {/* <Route index path="/tasks" element={<Tasks />} /> */}
       </>
     )
   );
