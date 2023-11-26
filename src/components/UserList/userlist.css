@@ -5,3 +5,8 @@
     text-align: center;
     color: #fff;
 }
+
+th {
+    background-color: #6c757d!important;
+    color: white !important;
+} 
